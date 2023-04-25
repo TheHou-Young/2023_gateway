@@ -15,12 +15,13 @@ async function createServiceProxy(url, serviceName){
         pathRewrite: {
           // TODO——添加对所有服务的路径重新or使用${serviceName}
           '^/service_one': '',
-          '^/service_two': ''
+          '^/service_two': '',
+          '^/user_manage': ''
         },
         onProxyReq: (proxyReq, req, res) => {
             if (req.my_account && req.my_role_id) {
-                proxyReq.setHeader('Account', req.my_account);
-                proxyReq.setHeader('Role_id', req.my_role_id);
+                proxyReq.setHeader('my_account', req.my_account);
+                proxyReq.setHeader('my_role_id', req.my_role_id);
               }
           }
       });

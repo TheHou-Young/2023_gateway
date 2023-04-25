@@ -16,15 +16,15 @@ const getIPAddress = () => {
 }
 
 // TODO——通过循环获取所有服务的IP并写入redis中
-const serviceName1 = "service_one"
-const serviceName2 = "service_two"
+// const serviceName1 = "service_one"
+const serviceName2 = "user_manage"
 
 // 获取目标服务的IP并存放到redis中
 async function getServiceIP (consul) {
-  const url1 = await consul.getServiceURL(serviceName1)
+  // const url1 = await consul.getServiceURL(serviceName1)
   const url2 = await consul.getServiceURL(serviceName2)
   // console.log("1111" + url)
-  redisClient.set(serviceName1, url1)
+  // redisClient.set(serviceName1, url1)
   redisClient.set(serviceName2, url2)
 
 }
