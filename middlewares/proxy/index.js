@@ -13,6 +13,7 @@ async function createServiceProxy(url, serviceName){
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {
+          // TODO——添加对所有服务的路径重新or使用${serviceName}
           '^/service_one': '',
           '^/service_two': ''
         },
@@ -33,7 +34,7 @@ async function apiProxy (req, res, next) {
   }
   // const urls = await consul.getServiceURL(serviceName)
   const url = await redisClient.get(serviceName)
-  console.log("2222" + url);
+  // console.log("2222" + url);
   const proxy = await createServiceProxy(url, serviceName);
   if (!proxy) {
     return res.status(404).send(`No such service: ${serviceName}`);

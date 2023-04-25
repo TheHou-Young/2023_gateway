@@ -9,6 +9,7 @@ const assign = (object, account, role_id) => ({
 const checktoken = (req, res, next) => {
   const token = req?.headers?.authorization;
   if (!token) {
+    // TODO——为不需要鉴权的接口设置白名单
     return res.status(401).send('Missing authorization header');
   }
   try {

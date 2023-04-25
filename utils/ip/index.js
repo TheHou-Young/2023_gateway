@@ -15,6 +15,7 @@ const getIPAddress = () => {
   }
 }
 
+// TODO——通过循环获取所有服务的IP并写入redis中
 const serviceName1 = "service_one"
 const serviceName2 = "service_two"
 
