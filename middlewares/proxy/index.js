@@ -40,6 +40,7 @@ async function apiProxy (req, res, next) {
   if (!proxy) {
     return res.status(404).send(`No such service: ${serviceName}`);
   }
+
   return proxy(req, res, next);
 }
 

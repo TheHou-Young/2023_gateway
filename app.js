@@ -12,9 +12,9 @@ const checktoken = require("./middlewares/checktoken/index");
 const {getServiceIP} = require("./utils/ip/index")
 
 // 测试一下token的使用
-const { createAccessToken } = require("./utils/jwt/index");
-const token = createAccessToken({ account: 123456789, role_id: 1234 });
-console.log(token);
+// const { createAccessToken } = require("./utils/jwt/index");
+// const token = createAccessToken({ account: 123456789, role_id: 1234 });
+// console.log(token);
 
 const app = express();
 const consul = getConsul();// 初始化consul客户端并注册自己的服务
@@ -23,7 +23,7 @@ loadEnv() // 加载env环境
 connectDB() // 连接数据库
 
 app.use(logger("dev"));
-app.use(express.json());
+// app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
