@@ -16,8 +16,8 @@ const getIPAddress = () => {
 }
 
 // TODO——通过循环获取所有服务的IP并写入redis中
-const serviceName1 = "service_one"
-// const serviceName2 = "user_manage"
+// const serviceName1 = "service_one"
+const serviceName1 = "user_manage"
 
 // 获取目标服务的IP并存放到redis中
 async function getServiceIP (consul) {
